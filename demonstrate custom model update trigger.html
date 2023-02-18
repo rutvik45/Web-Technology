@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<script type="text/javascript"
+src='https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js'></script>
+</head>
+<body ng-app="formapp">
+<div ng-controller="FormController">
+<form novalidate>
+First name: <input type="text" ng-model="employee.fname" ng-model-
+options="{updateon:'blur'}"/></br>
+Last name: <input type="text" ng-model="employee.lname" ng-model-
+options="{updateon:'mouseup'}"/></br>
+Gender: <input type="text" ng-model="employee.gender" ng-model-
+options="{debounce:'2000'}"/></br>
+</form>
+<p>First Name:{{employee.fname}}</p>
+<p>Last Name:{{employee.lname}}</p>
+<p>Gender:{{employee.gender}}</p>
+</div>
+</body>
+</html>
+<script>
+var app = angular.module('formapp',[]);
+app.controller('FormController',function($scope){
+$scope.employee={};
+
+});
+</script>
