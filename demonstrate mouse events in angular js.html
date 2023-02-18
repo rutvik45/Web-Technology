@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<style>
+.yellowdiv {
+width: 100px;
+height: 100px;
+
+background-color: yellow;
+padding: 2px, 2px, 2px, 2px;
+}
+.reddiv {
+width: 100px;
+height: 100px;
+background-color: red;
+padding: 2px, 2px, 2px, 2px;
+}
+.radiobutton {
+background-color: red;
+}
+.exitbutton {
+background-color: grey;
+}
+</style>
+
+<body ng-app>
+<div
+ng-class="{reddiv:enter,yellow:leave}" ng-mouseenter="enter=true";
+leave="false" ng-mouseleave="leave=true"; enter="false">
+Mouse<span ng-show="enter">Enter</span>
+<span ng-show="leave"></span>
+</div>
+<div>
+<input
+type="button"
+ng-class="{radiobutton:entry,exitbutton:exit}"
+ng-mouseenter="enter=true"
+;leave="false"
+ng-mouseleave="leave=true"
+;enter="false"
+value="Hello" />
+</div>
+<button ng-mousemove="count=count+1" ng-init="count=0"> increment(when
+mouse move)
+</button>
+count;{{count}}
+
+</body>
+</html>
