@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+Enter Your Text : <input type="text" ng-model="text" /><br />
+<br /><select ng-model="myvar" ng-change="change_style(text)">
+<option value="b">Bold and Red</option>
+
+<option value="i">Italic and Blue</option>
+<option value="u">Underline and Green</option>
+</select>
+<hr />
+<div ng-switch="myvar">
+<div ng-switch-when="b">
+<b style="color: tomato">Your Edited Text : {{data}}</b>
+</div>
+<div ng-switch-when="i">
+<i style="color: blue">Your Edited Text : {{data}}</i>
+</div>
+<div ng-switch-when="u">
+<u style="color: green">Your Edited Text : {{data}}</u>
+</div>
+<div ng-switch-when="default">
+<h1>Switch</h1>
+<p>Select topic from dropdown, to switch</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script>
+var app = angular.module("myapp", []);
+app.controller("myctrl", function ($scope) {
+$scope.change_style = function (text) {
+$scope.data = text;
+};
+});
+</script>
