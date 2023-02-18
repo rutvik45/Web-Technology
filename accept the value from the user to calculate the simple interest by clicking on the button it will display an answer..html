@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<title>Document</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+Enter the principal :<input type="number" ng-model="var1" /><br />
+Enter the rate :<input type="number" ng-model="var2" /><br /> Enter
+the time :<input type="number" ng-model="var3" /><br />
+<br /><br />
+<button ng-click="interest(var1,var2,var3)">interest</button>
+Interest:{{result}}
+</div>
+</body>
+</html>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function ($scope) {
+$scope.interest = function () {
+$scope.result = ($scope.var1 * $scope.var2 * $scope.var3) / 100;
+};
+});
+</script>
