@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<style>
+input.ng-touched.ng-invalid {
+background-color: red;
+}
+input.ng-touched.ng-valid {
+background-color: rgb(39, 228, 22);
+}
+input.ng-pristine {
+background-color: rgb(252, 240, 6);
+}
+</style>
+</head>
+<body ng-app>
+<form name="studentForm" novalidate>
+<p>
+First Name Status : <br />
+Pristine : {{studentForm.firstname.$pristine}} The field has not been modified
+yet <br />
+Touched : {{studentForm.firstname.$touched}} The Field has been Touched<br />
+
+Untouched : {{studentForm.firstname.$untouched}} The Field has not been Touched
+Yet<br />
+Valid : {{studentForm.firstname.$valid}} The Field Content is Valid<br />
+Invalid : {{studentForm.firstname.$invalid}} The Field Content is
+Invalid<br />
+Dirty : {{sstudentForm.firstname.$dirty}} The Field has been modified<br /> Error :
+{{studentForm.firstname.$error.required}} <br />
+<label form="firstname">Firstname</label>
+<input type="text" name="firstName" ng-model="firstName" required />
+<span ng-show="studentForm.firstName.$error.required"> First
+name is required </span
+><br /><br />
+<label form="email">Email</label>
+<input type="email" name="emailid" ng-model="emailid" required />
+<span ng-show="studentForm.emailid.$error.required">
+Email is required </span
+><br /><br />
+<span ng-show="studentForm.emailid.$error.email"> Email
+should be in proper Format </span
+><br /><br />
+<label for="Age">Age</label><br />
+<input
+type="number"
+name="age"
+min="18"
+max="60"
+ng-model="age"
+
+required /><br />
+<span ng-show="studentForm.age.$error.required">required</span>
+<span ng-show="studentForm.age.$error.min"
+>Minimum 18 years age is allowed</span
+>
+<span ng-show="studentForm.age.$error.max"
+>Maximum 60 years age is allowed</span
+><br /><br />
+</p>
+</form>
+</body>
+</html>
