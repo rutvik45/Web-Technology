@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<body ng-app>
+<form name="studentform" novalidate>
+<p>
+First Name Status: <br />
+Pristine:{{studentform.firstname.$pristine}} The field has not
+been modified yet <br />
+Touched:{{studentform.firstname.$touched}} The field has
+been touched<br />
+Untouched:{{studentform.firstname.$untouched}} The field has not been
+touched<br />
+Valid:{{studentform.firstname.$valid}} The field content is not
+valid<br />
+Dirty:{{studentform.firstname.$dirty}} This field has to be
+modified<br />
+error:{{studentform.firstname.$error.required}}<br />
+</p>
+<label form="firstname">firstname</label>
+<input type="text" name="firstname" ng-model="firstname" required />
+<span ng-show="studentform.firstname.$error.required">
+firstname is required </span
+><br />
+<label form="email">Email</label>
+<input type="text" name="email" ng-model="email" required />
+<span ng-show="studentform.email.$error.required"> Email is
+required </span
+><br />
+<span ng-show="studentform.email.$error.email">
+Email should be in proper format </span
+><br />
+<label for="Age">Age</label>
+<input
+type="number"
+name="age"
+min="18"
+max="28"
+ng-model="age"
+
+required /><br />
+<span ng-show="studentform.age.$error.required"></span>
+<span ng-show="studentform.age.$error.min"
+>minimum 18years old is allowed</span
+>
+<span ng-show="studentform.age.$error.max"
+>maximum 28years old is allowed</span
+><br />
+<input type="submit" value="save" />
+</form>
+</body>
+</html>
