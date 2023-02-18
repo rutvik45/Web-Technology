@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+<table border="1">
+<tr>
+<th><a href="" ng-click="order(&#39;Name&#39;)">Name</a></th>
+<th><a href="" ng-click="order(&#39;ID&#39;)">ID</a></th>
+</tr>
+<tr ng-repeat="x in data | orderBy : myorderby:reverse">
+<td>{{x.Name}}</td>
+<td>{{x.ID}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+<script>
+var app = angular.module("myapp", []);
+app.controller("myctrl", function ($scope) {
+$scope.data = [
+{ Name: "Alok", ID: "1" },
+{ Name: "Aditya", ID: "2" },
+{ Name: "Rahul", ID: "3" },
+{ Name: "Abhijeet", ID: "4" },
+{ Name: "Anand", ID: "5" },
+];
+$scope.order = function (x) {
+$scope.myorderby = x;
+
+$scope.reverse = !$scope.reverse;
+};
+});
+</script>
