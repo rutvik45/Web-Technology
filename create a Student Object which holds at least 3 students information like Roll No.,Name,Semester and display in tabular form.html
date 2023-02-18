@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+<table border="1">
+<tr>
+<td>Firstname</td>
+<td>Lastname</td>
+<td>Roll no.</td>
+<td>Percentage</td>
+</tr>
+<tr ng-repeat="stud in student">
+<td>{{stud.Firstname}}</td>
+<td>{{stud.Lastname}}</td>
+<td>{{stud.Roll_no}}</td>
+<td>{{stud.Percentage}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+<script>
+    var app = angular.module("myapp", []); app.controller("myctrl", function
+($scope) {
+    $scope.student = [
+    {
+    Firstname: "Rutvik", Lastname: "Redkar", Roll_no: "90",
+    Percentage: "88",
+    },
+   
+    {
+    Firstname: "Rushikesh", Lastname: "Sawant", Roll_no: "93",
+    Percentage: "95",
+    },
+    {
+    Firstname: "Ashvin", Lastname: "Shetty", Roll_no: "104",
+    Percentage: "90",
+    },
+    {
+    Firstname: "Abhijeet", Lastname: "Sharma",
+    Roll_no: "98",
+    Percentage: "89",
+    },
+    ];
+    });
+    </script>
