@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+<title>Document</title>
+</head>
+<body>
+<div ng-app="">
+Choose your Menu:
+
+<select ng-model="myVar">
+<option value="Omlet">Omlet</option>
+<option value="Dosa">Dosa</option>
+<option value="Sandwich">Sandwich</option>
+<option value="Chinese">Chinese</option>
+</select>
+<hr />
+<div ng-switch="myVar">
+<div ng-switch-when="Omlet">
+<p>Egg</p>
+<p>Salt</p>
+</div>
+</div>
+<div ng-switch-when="Dosa">
+<div ng-switch="myVar">
+<p>Rice</p>
+<p>Potato</p>
+</div>
+</div>
+<div ng-switch-when="Sandwich">
+<div ng-switch="myVar">
+<p>Bread</p>
+<p>Potato</p>
+</div>
+</div>
+<div ng-switch-when="Chinese">
+<div ng-switch="myVar">
+<p>Noodles</p>
+<p>Schezwan</p>
+</div>
+
+</div>
+</div>
+</body>
+</html>
